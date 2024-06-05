@@ -1,2 +1,4 @@
+import AdminRouter from "./AdminRouter";
 import UserRouter from "./UserRouter";
-export default UserRouter;
+
+export { AdminRouter,UserRouter};

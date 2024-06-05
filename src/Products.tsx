@@ -1,6 +1,6 @@
 import { useFetchProducts } from "./hooks/useProductApi";
-import StarRating from "./Components/StarRating";
-import Loading from "./Components/Loading";
+import StarRating from "./components/StarRating";
+import Loading from "./components/Loading";
 
 interface Product {
   id: number;
@@ -10,7 +10,11 @@ interface Product {
 }
 
 const Products = (props: any) => {
-  const { data, isLoading } = useFetchProducts();
+  const { data, isLoading } = useFetchProducts({
+    limit: props.limit,
+    sort: props.sort,
+    category: props.category,
+  });
 
   const buyBtnHandler = (id: number) => {
     const productToAdd = (data as Product[]).find(

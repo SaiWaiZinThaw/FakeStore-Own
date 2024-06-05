@@ -25,7 +25,6 @@ const Cart = (props: any) => {
       cost += product.price * product.quantity;
     });
     setTotalCost(parseFloat(cost.toFixed(2)));
-    console.log(totalCost);
   }, [props.cartProducts]);
 
   return (
